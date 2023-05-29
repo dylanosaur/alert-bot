@@ -1,0 +1,7 @@
+
+## hide root processes from users ##
+
+mount -o remount,rw,nosuid,nodev,noexec,relatime,hidepid=2 /proc
+
+## append the following line to /etc/fstab ##
+proc    /proc    proc    defaults,nosuid,nodev,noexec,relatime,hidepid=2     0     0
